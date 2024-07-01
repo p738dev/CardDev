@@ -1,13 +1,18 @@
 import React from "react";
+import { CiHeart } from "react-icons/ci";
+import { IoMdHeart, IoIosHeartHalf } from "react-icons/io";
 
-const Skill = (props) => {
+const Skill = ({ skill, color, level }) => {
   return (
-    <span
+    <div
       className="skill"
-      style={{ backgroundColor: props.bgColor }}
+      style={{ backgroundColor: color }}
     >
-      {props.skill}
-    </span>
+      <span>{skill}</span>
+      <span>{level === "beginner" && <CiHeart />}</span>
+      <span>{level === "intermediate" && <IoIosHeartHalf />}</span>
+      <span>{level === "advanced" && <IoMdHeart />}</span>
+    </div>
   );
 };
 
